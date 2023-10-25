@@ -1,5 +1,4 @@
 <script setup>
-
 import TheHeader from "../components/TheHeader.vue";
 import MainScreen from "../components/MainScreen.vue";
 </script>
@@ -11,5 +10,5 @@ import MainScreen from "../components/MainScreen.vue";
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 </style>

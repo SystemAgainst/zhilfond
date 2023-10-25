@@ -42,15 +42,14 @@ onMounted(() => {
 
 <template>
   <aside class="sidebar">
-    <p class="aside__title">Поиск сотрудников</p>
+    <p class="sidebar__title">Поиск сотрудников</p>
     <input
-        class="aside__input"
+        class="sidebar__input"
         type="search"
         placeholder="Anna"
         v-model="search"
     />
-    <p class="aside__title">Результаты</p>
-<!--    <card-list :users="users" />-->
+    <p class="sidebar__title">Результаты</p>
     <div class="mb-18" v-for="user in filteredUsers" :key="user.id">
       <div class="card" @click="handleUserClick(user.id)">
         <img class="card__img" src="../assets/static/mock-photo.png" alt="PL">
@@ -64,57 +63,59 @@ onMounted(() => {
   </aside>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .sidebar {
   min-height: 100%;
   width: 296px;
   border-right: 1px solid #DEDEDD;
   padding: 0 31px;
-}
-.aside__title {
-  font-size: 1rem;
-  line-height: 1.4;
-  font-weight: 600;
-}
-.aside__input {
-  border: 1px solid #E9ECEF;
-  border-radius: 8px;
-  padding: 15px 16px;
-  margin: 22px 0;
-}
 
+  &__title {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
 
-.card {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 10px;
-}
-.card:hover {
-  background-color: #76787D;
-  transition: .3s background-color ease-in;
-  cursor: pointer;
-}
-.card__img {
-  height: 70px;
-  width: 70px;
-  border-right: 1px solid #E0E0E0;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  background-color: white;
-  object-fit: cover;
-}
-.card__right {
-  display: block;
-  padding: 15px;
-  font-size: 14px;
-  line-height: .5;
-}
-.card__text__username {
-  font-weight: 700;
-}
-.mb-18 {
-  margin-bottom: 18px;
+  &__input {
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    padding: 15px 16px;
+    margin: 22px 0;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #76787D;
+      transition: 0.3s background-color ease-in;
+      cursor: pointer;
+    }
+
+    &__img {
+      height: 70px;
+      width: 70px;
+      border-right: 1px solid #E0E0E0;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-top: 1px solid #fff;
+      background-color: white;
+      object-fit: cover;
+    }
+
+    &__right {
+      display: block;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 0.5;
+    }
+
+    &__text__username {
+      font-weight: 700;
+    }
+  }
 }
 </style>

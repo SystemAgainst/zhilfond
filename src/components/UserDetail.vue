@@ -6,6 +6,8 @@ const props = defineProps({
   },
   isUserDetailOpen: Boolean,
 });
+
+const emit = defineEmits(["hideModal"]);
 </script>
 
 <template>
@@ -15,7 +17,7 @@ const props = defineProps({
         <img src="../assets/static/mock-photo.png" alt="photo">
       </div>
       <div class="content__right">
-        <div><strong>{{ selectedUser.username }}</strong></div>
+        <div class="content__username">{{ selectedUser.username }}</div>
         <p><strong>email:</strong> {{ selectedUser.email }}</p>
         <p><strong>phone:</strong> {{ selectedUser.phone }}</p>
         <p><strong>О себе:</strong></p>
@@ -34,7 +36,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .display {
   width: 975px;
   margin: 0 auto;
@@ -50,10 +52,15 @@ const props = defineProps({
   height: 286px;
   font-size: 14px;
   line-height: 1.25;
-}
 
-.content__left {
-  flex-shrink: 0;
-  margin-right: 61px;
+  &__left {
+    flex-shrink: 0;
+    margin-right: 61px;
+  }
+
+  &__username {
+    font-size: 1rem;
+    font-weight: 700;
+  }
 }
 </style>

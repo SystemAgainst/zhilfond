@@ -9,17 +9,18 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   margin-bottom: 26px;
-}
-.header__logo {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--red-color);
+
+  &__logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--red-color);
+  }
 }
 </style>
