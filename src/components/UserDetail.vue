@@ -6,8 +6,6 @@ const props = defineProps({
   },
   isUserDetailOpen: Boolean,
 });
-
-const emit = defineEmits(["hideModal"]);
 </script>
 
 <template>
